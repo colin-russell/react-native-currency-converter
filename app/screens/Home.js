@@ -22,6 +22,7 @@ class Home extends Component {
   };
 
   handleTextChange = (text) => {
+    // eslint-disable-next-line no-console
     console.log('change text', text);
   };
 
