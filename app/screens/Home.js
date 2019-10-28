@@ -4,6 +4,7 @@ import { StatusBar } from 'react-native';
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
 import { InputWithButton } from '../components/TextInput';
+import { ClearButton } from '../components/Button';
 
 const TEMP_BASE_CURRENCY = 'USD';
 const TEMP_QUOTE_CURRENCY = 'GBP';
@@ -26,6 +27,11 @@ class Home extends Component {
     console.log('change text', text);
   };
 
+  handleSwapCurrency = () => {
+    // eslint-disable-next-line no-console
+    console.log('reverse currencies');
+  };
+
   render() {
     return (
       <Container>
@@ -45,6 +51,7 @@ class Home extends Component {
           value={TEMP_QUOTE_PRICE}
           keyboardType="numeric"
         />
+        <ClearButton text="Reverse Currencies" onPress={this.handleSwapCurrency} />
       </Container>
     );
   }
