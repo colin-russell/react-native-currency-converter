@@ -1,44 +1,40 @@
-import React, { Component } from 'react';
-import { StatusBar, KeyboardAvoidingView } from 'react-native';
+import React, { Component } from "react";
+import { StatusBar, KeyboardAvoidingView } from "react-native";
 
-import { Container } from '../components/Container';
-import { Logo } from '../components/Logo';
-import { InputWithButton } from '../components/TextInput';
-import { ClearButton } from '../components/Button';
-import { LastConverted } from '../components/Text';
-import { Header } from '../components/Header';
+import { Container } from "../components/Container";
+import { Logo } from "../components/Logo";
+import { InputWithButton } from "../components/TextInput";
+import { ClearButton } from "../components/Button";
+import { LastConverted } from "../components/Text";
+import { Header } from "../components/Header";
 
-const TEMP_BASE_CURRENCY = 'USD';
-const TEMP_QUOTE_CURRENCY = 'GBP';
-const TEMP_BASE_PRICE = '100';
-const TEMP_QUOTE_PRICE = '79.74';
+const TEMP_BASE_CURRENCY = "USD";
+const TEMP_QUOTE_CURRENCY = "GBP";
+const TEMP_BASE_PRICE = "100";
+const TEMP_QUOTE_PRICE = "79.74";
 const TEMP_CONVERSION_RATE = 0.7974;
 const TEMP_CONVERSION_DATE = new Date();
 
 class Home extends Component {
   handlePressBaseCurrency = () => {
-    // eslint-disable-next-line no-console
-    console.log('press base');
+    console.log(TEMP_BASE_CURRENCY);
+    console.log("press base");
   };
 
   handlePressQuoteCurrency = () => {
-    // eslint-disable-next-line no-console
-    console.log('press quote');
+    console.log("press quote");
   };
 
-  handleTextChange = (text) => {
-    // eslint-disable-next-line no-console
-    console.log('change text', text);
+  handleTextChange = text => {
+    console.log("change text", text);
   };
 
   handleSwapCurrency = () => {
-    // eslint-disable-next-line no-console
-    console.log('reverse currencies');
+    console.log("reverse currencies");
   };
 
   handleOptionsPress = () => {
-    // eslint-disable-next-line no-console
-    console.log('options press');
+    console.log("options press");
   };
 
   render() {
@@ -68,7 +64,10 @@ class Home extends Component {
             quote={TEMP_QUOTE_CURRENCY}
             conversionRate={TEMP_CONVERSION_RATE}
           />
-          <ClearButton text="Reverse Currencies" onPress={this.handleSwapCurrency} />
+          <ClearButton
+            text="Reverse Currencies"
+            onPress={this.handleSwapCurrency}
+          />
         </KeyboardAvoidingView>
       </Container>
     );
