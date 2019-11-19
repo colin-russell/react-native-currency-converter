@@ -1,18 +1,24 @@
 import React, { Component } from "react";
-import { SafeAreaView, Text, FlatList, StyleSheet } from "react-native";
+import { View, StatusBar, FlatList } from "react-native";
+// import PropTypes from "prop-types";
 
-import { ListItem, Separator, styles } from "../components/List";
+import { ListItem, Separator } from "../components/List";
 import currencies from "../data/currencies";
 
 const TEMP_CURRENT_CURRENCY = "CAD";
 
 class CurrencyList extends Component {
+  // static propTypes = {
+  //   navigation: PropTypes.object
+  // };
   handlePress = () => {
     console.log("row press");
+    this.props.navigation.goBack(null);
   };
   render() {
     return (
-      <SafeAreaView>
+      <View>
+        <StatusBar translucent={false} barStyle="dark-content" />
         <FlatList
           data={currencies}
           renderItem={({ item }) => (
@@ -25,7 +31,7 @@ class CurrencyList extends Component {
           keyExtractor={item => item}
           ItemSeparatorComponent={Separator}
         />
-      </SafeAreaView>
+      </View>
     );
   }
 }
