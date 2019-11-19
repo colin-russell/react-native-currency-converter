@@ -14,6 +14,7 @@ const styles = EStyleSheet.create({
 class Themes extends Component {
   handleThemePress = color => {
     console.log("press theme ", color);
+    this.props.navigation.goBack();
   };
 
   render() {

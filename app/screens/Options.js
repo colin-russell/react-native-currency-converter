@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
 class Options extends Component {
   handleThemesPress = () => {
-    console.log("press themes");
+    this.props.navigation.navigate("Themes", { title: "Options" });
   };
 
   handleSitePress = () => {
@@ -33,7 +33,7 @@ class Options extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          <StatusBar translucent={false} barStyle="default" />
+          <StatusBar translucent={false} barStyle="dark-content" />
           <ListItem
             text="Themes"
             onPress={this.handleThemesPress}
