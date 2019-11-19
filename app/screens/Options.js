@@ -4,7 +4,8 @@ import {
   StatusBar,
   SafeAreaView,
   Platform,
-  StyleSheet
+  StyleSheet,
+  Linking
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -26,7 +27,7 @@ class Options extends Component {
   };
 
   handleSitePress = () => {
-    console.log("press site");
+    Linking.openURL("http://fixer.io").catch(() => alert("An error occured"));
   };
 
   render() {
