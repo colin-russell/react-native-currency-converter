@@ -10,6 +10,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 
 import { ListItem, Separator } from "../components/List";
+import { connectAlert } from "../components/Alert";
 
 const ICON_PREFIX = Platform.OS === "ios" ? "ios" : "md";
 const ICON_COLOR = "#868686";
@@ -23,11 +24,17 @@ const styles = StyleSheet.create({
 
 class Options extends Component {
   handleThemesPress = () => {
-    this.props.navigation.navigate("Themes", { title: "Options" });
+    this.props.navigation.navigate("Themes", { title: "Themes" });
   };
 
   handleSitePress = () => {
-    Linking.openURL("http://fixer.io").catch(() => alert("An error occured"));
+    Linking.openURL("httpa://fixer.io").catch(() =>
+      this.props.alertWithType(
+        "info",
+        "Sorry!",
+        "Fixer.io can't be opened right now"
+      )
+    );
   };
 
   render() {
@@ -65,4 +72,4 @@ class Options extends Component {
   }
 }
 
-export default Options;
+export default connectAlert(Options);
